@@ -30,21 +30,16 @@
 </head>
 <body>
     <script>
-        // 달을 생성하고 마우스를 따라다니도록 설정
-        document.addEventListener("mousemove", function(e) {
-            const moon = document.createElement("div");
-            moon.classList.add("moon");
-            moon.innerText = "🌕"; // 달 이모지
-            document.body.appendChild(moon);
+        // 달 요소 생성 및 추가
+        const moon = document.createElement("div");
+        moon.classList.add("moon");
+        moon.innerText = "🌕"; // 달 이모지
+        document.body.appendChild(moon);
 
-            // 달 위치 설정
+        // 마우스를 따라 달이 이동하도록 설정
+        document.addEventListener("mousemove", function(e) {
             moon.style.left = `${e.pageX}px`;
             moon.style.top = `${e.pageY}px`;
-
-            // 달을 일정 시간 후에 제거
-            setTimeout(() => {
-                moon.remove();
-            }, 1500);
         });
     </script>
 </body>
