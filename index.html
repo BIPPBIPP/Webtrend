@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>하트가 마우스 포인터를 따라다니는 페이지</title>
+    <title>달이 마우스 포인터를 따라다니는 페이지</title>
     <style>
         /* 기본 설정 */
         body {
@@ -11,41 +11,40 @@
             overflow: hidden;
         }
 
-        /* 하트 스타일 */
-        .heart {
+        /* 달 스타일 */
+        .moon {
             position: absolute;
-            color: red;
-            font-size: 24px;
+            font-size: 30px;
             pointer-events: none;
             transform: translate(-50%, -50%);
-            animation: float 1s infinite ease-in-out;
+            animation: float 1.5s infinite ease-in-out;
         }
 
-        /* 하트 애니메이션 */
+        /* 달 애니메이션 */
         @keyframes float {
             0% { transform: translate(-50%, -50%) scale(1); }
-            50% { transform: translate(-50%, -60%) scale(1.2); }
+            50% { transform: translate(-50%, -55%) scale(1.2); }
             100% { transform: translate(-50%, -50%) scale(1); }
         }
     </style>
 </head>
 <body>
     <script>
-        // 하트를 생성하고 마우스를 따라다니도록 설정
+        // 달을 생성하고 마우스를 따라다니도록 설정
         document.addEventListener("mousemove", function(e) {
-            const heart = document.createElement("div");
-            heart.classList.add("heart");
-            heart.innerText = "❤️";
-            document.body.appendChild(heart);
+            const moon = document.createElement("div");
+            moon.classList.add("moon");
+            moon.innerText = "🌕"; // 달 이모지
+            document.body.appendChild(moon);
 
-            // 하트 위치 설정
-            heart.style.left = `${e.pageX}px`;
-            heart.style.top = `${e.pageY}px`;
+            // 달 위치 설정
+            moon.style.left = `${e.pageX}px`;
+            moon.style.top = `${e.pageY}px`;
 
-            // 하트를 일정 시간 후에 제거
+            // 달을 일정 시간 후에 제거
             setTimeout(() => {
-                heart.remove();
-            }, 1000);
+                moon.remove();
+            }, 1500);
         });
     </script>
 </body>
